@@ -21,3 +21,6 @@ MonoBehaviour:
     gameMaxTemp: 0
     minParticlesDuration: 0.2
     maxParticlesDuration: 4
+    fireFadeRate: 0.1
+    valuePerCharacter: 0.06
+    maxHealthDepletionRate: 0.1

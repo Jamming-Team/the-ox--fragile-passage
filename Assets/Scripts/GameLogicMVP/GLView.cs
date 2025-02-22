@@ -7,8 +7,10 @@ namespace MoI.GameLogicMVP
     public class GLView : MonoBehaviour
     {
 
-        
+
         [Header("View Refs")]
+        [SerializeField]
+        private Image _healthBar;
         [SerializeField]
         private Image _tempBackground;
         [SerializeField]
@@ -35,6 +37,8 @@ namespace MoI.GameLogicMVP
             main.startColor = startColor;
             
             _victoryTimerText.text = (Mathf.Round(data.timerValue * 10f) / 10f).ToString();
+
+            _healthBar.fillAmount = data.healthFill;
         }
         
     }
@@ -46,5 +50,7 @@ namespace MoI.GameLogicMVP
         public float fireValue;
         public float fireFill;
         public float timerValue;
+
+        public float healthFill;
     }
 }

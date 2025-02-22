@@ -30,7 +30,8 @@ namespace MoI.GameLogicMVP
 
         public void Init()
         {
-            _model = new GLModel(_data.gameMaxTemp, _data.victoryTimer, _data.gameDecreaseRate, _data.fireFadeRate, _data.gameMinTemp);
+            _model = new GLModel(_data.gameMaxTemp, _data.victoryTimer, 
+                _data.gameDecreaseRate, _data.fireFadeRate, _data.gameMinTemp, _data);
             
             GameEvents.OnSuccessInput += OnSuccessInput;
         }
@@ -59,7 +60,9 @@ namespace MoI.GameLogicMVP
                 tempFill = _data.GetTempFillRate(_model._glModelData.tempValue),
                 fireValue = _data.GetFireFillRate(_model._glModelData.fireValue),
                 fireFill = _model._glModelData.fireValue,
-                timerValue = _model._glModelData.victoryTimerValue
+                timerValue = _model._glModelData.victoryTimerValue,
+                
+                healthFill = _model._glModelData.health
             };
             _view.UpdateState(viewData);
         }
