@@ -13,9 +13,11 @@ namespace MoI.GameLogicMVP
         
         private float _fireFadeRate;
         private float _tempFadeRate;
+
+        private float _minTemp;
         
 
-        public GLModel(float tempValue, float victoryTimerValue, float tempFadeRate, float fireFadeRate)
+        public GLModel(float tempValue, float victoryTimerValue, float tempFadeRate, float fireFadeRate, float minTemp)
         {
             _glModelData.fireValue = 0.7f;
             _glModelData.tempValue = tempValue;
@@ -23,13 +25,14 @@ namespace MoI.GameLogicMVP
 
             _fireFadeRate = fireFadeRate;
             _tempFadeRate = tempFadeRate;
+            _minTemp = minTemp;
         }
 
 
         public void UpdateValues(float delta)
         {
             _glModelData.fireValue -= _fireFadeRate * delta;
-            _glModelData.tempValue -= _tempFadeRate * delta;
+            _glModelData.tempValue = Mathf.Clamp(_glModelData.tempValue - _tempFadeRate * delta, _minTemp, 20f);
             _glModelData.victoryTimerValue -= delta;
 
             if (_glModelData.victoryTimerValue <= 0f)
@@ -44,7 +47,9 @@ namespace MoI.GameLogicMVP
 
         public void FuelUpFire(float value)
         {
+            
             _glModelData.fireValue = Mathf.Clamp(_glModelData.fireValue + value, 0f, 1f);
+            
         }
         
     }

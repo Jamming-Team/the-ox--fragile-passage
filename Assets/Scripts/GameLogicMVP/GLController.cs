@@ -6,6 +6,10 @@ namespace MoI.GameLogicMVP
     public class GLController : MonoBehaviour
     {
         [SerializeField]
+        private GameObject _sparkPrefab;
+        [SerializeField]
+        private Transform _sparkSpawnPoint;
+        [SerializeField]
         private WGDataSO _wgDataSO;
         private WGDataSO.GameData _data => _wgDataSO.gameData;
 
@@ -23,9 +27,16 @@ namespace MoI.GameLogicMVP
 
         public void Init()
         {
-            _model = new GLModel(_data.gameMaxTemp, _data.victoryTimer, _data.gameDecreaseRate, _data.fireFadeRate);
+            _model = new GLModel(_data.gameMaxTemp, _data.victoryTimer, _data.gameDecreaseRate, _data.fireFadeRate, _data.gameMinTemp);
             
+            GameEvents.OnSuccessInput += OnSuccessInput;
+        }
+
+        private void OnSuccessInput(int obj)
+        {
+            _model.FuelUpFire(obj * _data.valuePerCharacter);
             
+            Instantiate(_sparkPrefab, _sparkSpawnPoint.position, Quaternion.identity);
         }
 
         private void Update()
@@ -33,7 +44,7 @@ namespace MoI.GameLogicMVP
             // Debug.Log(_model._glModelData.victoryTimerValue);
             _model.UpdateValues(Time.deltaTime);
 
-            Debug.Log(_data.GetTempFillRate(_model._glModelData.tempValue));
+            // Debug.Log(_data.GetTempFillRate(_model._glModelData.tempValue));
             
             var viewData = new GLViewData
             {
@@ -47,5 +58,6 @@ namespace MoI.GameLogicMVP
         }
 
 
+        
     }
 }

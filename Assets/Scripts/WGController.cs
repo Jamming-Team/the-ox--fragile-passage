@@ -47,6 +47,8 @@ namespace MoI
             _model.RemoveWord(obj);
             _model.FillWordsList();
             _view.ClearInputField();
+            
+            GameEvents.OnSuccessInput?.Invoke(obj.Length);
         }
 
         private void OnInputFailed()
