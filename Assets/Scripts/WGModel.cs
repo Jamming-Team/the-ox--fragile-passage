@@ -54,10 +54,10 @@ namespace MoI
             
             var completeMatch = _currentWordsList
                 .Where(word => word.Equals(part, StringComparison.OrdinalIgnoreCase))
-                .ToList()[0];
+                .ToList();
             
-            if (completeMatch != null)
-                OnInputSuccess?.Invoke(completeMatch);
+            if (completeMatch.Any())
+                OnInputSuccess?.Invoke(completeMatch[0]);
         }
         
         

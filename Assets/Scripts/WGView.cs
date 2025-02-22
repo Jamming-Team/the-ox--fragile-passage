@@ -17,6 +17,9 @@ namespace MoI
         public void Init()
         {
             _inputField.onValueChanged.AddListener(_ => OnInputValueChanged?.Invoke(_inputField.text));
+            // _inputField.OnPointerClick(null);
+            _inputField.Select();
+            _inputField.ActivateInputField();
         }
 
         public void UpdateCurrentWords(List<string> words)

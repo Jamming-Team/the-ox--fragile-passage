@@ -33,8 +33,30 @@ namespace MoI
             _model = new WGModel(ref dictList, _maxWordsCount);
             
             _model.OnCurrentWordsChanged += OnCurrentWordsChanged;
+            _model.OnInputFailed += OnInputFailed;
+            _model.OnInputSuccess += OnInputSuccess;
             
             _model.FillWordsList();
+            
+            _view.OnInputValueChanged += OnInputValueChanged;
+            _view.Init();
+        }
+
+        private void OnInputSuccess(string obj)
+        {
+            _model.RemoveWord(obj);
+            _model.FillWordsList();
+            _view.ClearInputField();
+        }
+
+        private void OnInputFailed()
+        {
+            _view.ClearInputField();
+        }
+
+        private void OnInputValueChanged(string obj)
+        {
+            _model.CheckWordPart(obj);
         }
 
         private void OnCurrentWordsChanged(List<string> obj)
