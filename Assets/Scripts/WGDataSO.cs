@@ -24,17 +24,19 @@ namespace MoI
             
             public float minParticlesDuration = 0.2f;
             public float maxParticlesDuration = 4f;
+            public float fireFadeRate = 0.1f;
+            public float valuePerCharacter = 0.04f;
 
             public float gameDecreaseRate => Mathf.Abs(gameMaxTemp - gameMinTemp) / victoryTimer;
 
             public float GetTempFillRate(float currentTemp)
             {
-                return Mathf.Lerp(absoluteMinTemp, absoluteMaxTemp, currentTemp);
+                return Mathf.InverseLerp(absoluteMinTemp, absoluteMaxTemp, currentTemp);
             }
             
             public float GetFireFillRate(float currentFire)
             {
-                return Mathf.InverseLerp(minParticlesDuration, maxParticlesDuration, currentFire);
+                return Mathf.Lerp(minParticlesDuration, maxParticlesDuration, currentFire);
             }
             
 

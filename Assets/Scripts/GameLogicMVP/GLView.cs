@@ -30,6 +30,9 @@ namespace MoI.GameLogicMVP
 
             var main = _firePS.main;
             main.startLifetime = data.fireValue;
+            var startColor = main.startColor;
+            startColor.color = new Color(1, 1, 1, data.fireFill);
+            main.startColor = startColor;
             
             _victoryTimerText.text = (Mathf.Round(data.timerValue * 10f) / 10f).ToString();
         }
@@ -41,6 +44,7 @@ namespace MoI.GameLogicMVP
         public float tempTrueValue;
         public float tempFill;
         public float fireValue;
+        public float fireFill;
         public float timerValue;
     }
 }

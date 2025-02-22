@@ -11,24 +11,24 @@ namespace MoI.GameLogicMVP
         
         public readonly GLModelData _glModelData = new GLModelData();
         
-        private float _fadeRate;
+        private float _fireFadeRate;
         private float _tempFadeRate;
         
 
-        public GLModel(float tempValue, float victoryTimerValue, float tempFadeRate)
+        public GLModel(float tempValue, float victoryTimerValue, float tempFadeRate, float fireFadeRate)
         {
             _glModelData.fireValue = 0.7f;
             _glModelData.tempValue = tempValue;
             _glModelData.victoryTimerValue = victoryTimerValue;
 
-            _fadeRate = 1f / victoryTimerValue;
+            _fireFadeRate = fireFadeRate;
             _tempFadeRate = tempFadeRate;
         }
 
 
         public void UpdateValues(float delta)
         {
-            _glModelData.fireValue -= _fadeRate * delta;
+            _glModelData.fireValue -= _fireFadeRate * delta;
             _glModelData.tempValue -= _tempFadeRate * delta;
             _glModelData.victoryTimerValue -= delta;
 

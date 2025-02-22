@@ -23,21 +23,24 @@ namespace MoI.GameLogicMVP
 
         public void Init()
         {
-            _model = new GLModel(_data.gameMaxTemp, _data.victoryTimer, _data.gameDecreaseRate);
+            _model = new GLModel(_data.gameMaxTemp, _data.victoryTimer, _data.gameDecreaseRate, _data.fireFadeRate);
             
             
         }
 
         private void Update()
         {
-            Debug.Log(_model._glModelData.victoryTimerValue);
+            // Debug.Log(_model._glModelData.victoryTimerValue);
             _model.UpdateValues(Time.deltaTime);
 
+            Debug.Log(_data.GetTempFillRate(_model._glModelData.tempValue));
+            
             var viewData = new GLViewData
             {
                 tempTrueValue = _model._glModelData.tempValue,
                 tempFill = _data.GetTempFillRate(_model._glModelData.tempValue),
                 fireValue = _data.GetFireFillRate(_model._glModelData.fireValue),
+                fireFill = _model._glModelData.fireValue,
                 timerValue = _model._glModelData.victoryTimerValue
             };
             _view.UpdateState(viewData);
