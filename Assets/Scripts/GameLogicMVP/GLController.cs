@@ -5,6 +5,9 @@ namespace MoI.GameLogicMVP
 {
     public class GLController : MonoBehaviour
     {
+        [SerializeField] 
+        private SoundData _sparkSound;
+        
         [SerializeField]
         private GameObject _sparkPrefab;
         [SerializeField]
@@ -37,6 +40,10 @@ namespace MoI.GameLogicMVP
             _model.FuelUpFire(obj * _data.valuePerCharacter);
             
             Instantiate(_sparkPrefab, _sparkSpawnPoint.position, Quaternion.identity);
+            SoundManager.Instance.CreateSoundBuilder()
+                .WithRandomPitch()
+                .WithPosition(transform.position)
+                .Play(_sparkSound);
         }
 
         private void Update()

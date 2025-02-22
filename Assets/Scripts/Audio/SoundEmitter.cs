@@ -52,7 +52,11 @@ namespace MoI
             if (playingCoroutine != null) {
                 StopCoroutine(playingCoroutine);
             }
-            
+
+            if (Data.clips.Count > 0)
+            {
+                audioSource.clip = Data.clips[Random.Range(0, Data.clips.Count)];
+            }
             audioSource.Play();
             playingCoroutine = StartCoroutine(WaitForSoundToEnd());
         }

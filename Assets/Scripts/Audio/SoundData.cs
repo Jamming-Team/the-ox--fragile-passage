@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -7,6 +8,7 @@ namespace MoI
     [Serializable]
     public class SoundData {
         public AudioClip clip;
+        public List<AudioClip> clips;
         public AudioMixerGroup mixerGroup;
         public bool loop;
         public bool playOnAwake;
