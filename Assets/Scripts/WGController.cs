@@ -14,14 +14,13 @@ namespace MoI
         private WGModel _model;
 
 
-        private void Start()
-        {
-            Init();
-        }
+        // private void Start()
+        // {
+        //     Init();
+        // }
 
-        public void Init()
+        public void Activate(List<string> dictList)
         {
-            DictionaryLoader.LoadDictionary(out var dictList);
 
             // Debug.Log(dictList.Count);
             //
@@ -39,8 +38,21 @@ namespace MoI
             _model.FillWordsList();
             
             _view.OnInputValueChanged += OnInputValueChanged;
-            _view.Init();
+            _view.Activate();
         }
+
+        public void Deactivate()
+        {
+            _model.OnCurrentWordsChanged -= OnCurrentWordsChanged;
+            _model.OnInputFailed -= OnInputFailed;
+            _model.OnInputSuccess -= OnInputSuccess;
+            
+            _view.OnInputValueChanged -= OnInputValueChanged;
+            
+            _view.Deactivate();
+        }
+        
+        
 
         private void OnInputSuccess(string obj)
         {

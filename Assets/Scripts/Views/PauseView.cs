@@ -28,7 +28,7 @@ namespace MoI
 
         private void PressContinueButton()
         {
-            GameEvents.OnPressRestart?.Invoke();
+            GameEvents.OnPressContinue?.Invoke();
         }
         
         private void PressRestartButton()

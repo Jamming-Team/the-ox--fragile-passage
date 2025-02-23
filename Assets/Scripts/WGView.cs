@@ -14,12 +14,17 @@ namespace MoI
         [SerializeField]
         private TMP_InputField _inputField;
 
-        public void Init()
+        public void Activate()
         {
             _inputField.onValueChanged.AddListener(_ => OnInputValueChanged?.Invoke(_inputField.text));
             // _inputField.OnPointerClick(null);
-            _inputField.Select();
-            _inputField.ActivateInputField();
+            // _inputField.Select();
+            // _inputField.ActivateInputField();
+        }
+
+        public void Deactivate()
+        {
+            _inputField.onValueChanged.RemoveListener(_ => OnInputValueChanged?.Invoke(_inputField.text));
         }
 
         public void UpdateCurrentWords(List<string> words)

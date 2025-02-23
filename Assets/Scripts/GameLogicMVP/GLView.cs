@@ -24,6 +24,15 @@ namespace MoI.GameLogicMVP
         [SerializeField]
         private ParticleSystem _firePS;
 
+        public void SetIntro()
+        {
+            var main = _firePS.main;
+            main.startLifetime = 3f;
+            var startColor = main.startColor;
+            startColor.color = new Color(1, 1, 1, 1);
+            main.startColor = startColor;
+        }
+
         public void UpdateState(GLViewData data)
         {
             _tempText.text = Mathf.Round(data.tempTrueValue) + " \u00b0C";

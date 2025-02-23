@@ -28,14 +28,27 @@ namespace MoI.GameLogicMVP
         //     Init();
         // }
 
-
-        public void Init(WGDataSO wgDataSO)
+        public void SetIntro()
         {
-            _data = wgDataSO.gameData;
+            _view.SetIntro();
+        }
+
+        public void Activate(WGDataSO.GameData data)
+        {
+            _data = data;
             _model = new GLModel(_data.gameMaxTemp, _data.victoryTimer, 
                 _data.gameDecreaseRate, _data.fireFadeRate, _data.gameMinTemp, _data);
             
             GameEvents.OnSuccessInput += OnSuccessInput;
+            
+            _isActive = true;
+        }
+
+        public void Deactivate()
+        {
+            GameEvents.OnSuccessInput -= OnSuccessInput;
+            
+            _isActive = false;
         }
 
         private void OnSuccessInput(int obj)

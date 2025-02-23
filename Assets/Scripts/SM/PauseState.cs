@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace MoI.SM
 {
     public class PauseState : LevelStateBase
@@ -8,6 +10,7 @@ namespace MoI.SM
             GameEvents.OnPressContinue += OnPressContinue;
             GameEvents.OnPressRestart += OnPressRestart;
             GameEvents.OnPressToMainMenu += OnPressToMainMenu;
+            Time.timeScale = 0f;
         }
 
         protected override void OnExit()
@@ -16,16 +19,20 @@ namespace MoI.SM
             GameEvents.OnPressContinue -= OnPressContinue;
             GameEvents.OnPressRestart -= OnPressRestart;
             GameEvents.OnPressToMainMenu -= OnPressToMainMenu;
+            Time.timeScale = 1f;
         }
         
         private void OnPressToMainMenu()
         {
+            _core.StopGame();
             RequestTransition<MainViewState>();
         }
 
         private void OnPressRestart()
         {
-            RequestTransition<GameInitState>();
+            _core.StopGame();
+            _core.StartGame();
+            RequestTransition<ActionState>();
         }
 
         private void OnPressContinue()

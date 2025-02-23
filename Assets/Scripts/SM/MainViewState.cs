@@ -8,6 +8,7 @@ namespace MoI.SM
             GameEvents.OnPressStart += OnPressStart;
             GameEvents.OnPressSettings += OnPressSettings;
             GameEvents.OnPressHowToPlay += OnPressHowToPlay;
+            _core.IntroGame();
         }
         
         protected override void OnExit()
@@ -30,7 +31,8 @@ namespace MoI.SM
 
         private void OnPressStart()
         {
-            RequestTransition<GameInitState>();
+            _core.StartGame();
+            RequestTransition<ActionState>();
         }
     }
 }

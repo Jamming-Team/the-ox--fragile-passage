@@ -7,6 +7,7 @@ namespace MoI.SM
             base.OnEnter();
             GameEvents.OnPressRestart += OnPressRestart;
             GameEvents.OnPressToMainMenu += OnPressToMainMenu;
+            _core.StopGame();
         }
 
         protected override void OnExit()
