@@ -12,6 +12,7 @@ namespace MoI
         public virtual void Init(MonoBehaviour core)
         {
             _core = (T_ContextType)core;
+            gameObject.SetActive(false);
         }
 
         public virtual void Enter()

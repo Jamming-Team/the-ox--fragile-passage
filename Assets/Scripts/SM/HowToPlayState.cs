@@ -10,8 +10,8 @@ namespace MoI.SM
         
         protected override void OnExit()
         {
-            base.OnEnter();
-            GameEvents.OnPressBack += OnPressBack;
+            base.OnExit();
+            GameEvents.OnPressBack -= OnPressBack;
         }
 
         private void OnPressBack()

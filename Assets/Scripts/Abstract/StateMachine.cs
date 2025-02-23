@@ -26,8 +26,8 @@ namespace MoI
             GetComponentsInChildren(_states);
             _states.ForEach(x =>
             {
-                x.Init(core);
                 x.OnTransitionRequired += ChangeState;
+                x.Init(core);
                 // Debug.Log(x.GetType());
             });
             // m_currentState = m_states[0];

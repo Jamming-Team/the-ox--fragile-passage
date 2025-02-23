@@ -41,8 +41,8 @@ namespace MoI.GameLogicMVP
             _glModelData.tempValue = Mathf.Clamp(_glModelData.tempValue - _tempFadeRate * delta, _minTemp, 20f);
             _glModelData.victoryTimerValue -= delta;
 
-            Debug.Log(_currentHealthDepletionRate);
-            Debug.Log(_wgData.GetTempDamageRate(_glModelData.tempValue));
+            // Debug.Log(_currentHealthDepletionRate);
+            // Debug.Log(_wgData.GetTempDamageRate(_glModelData.tempValue));
             
             _glModelData.health -= delta * _currentHealthDepletionRate;
 
