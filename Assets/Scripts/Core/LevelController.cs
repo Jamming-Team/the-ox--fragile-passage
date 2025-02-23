@@ -22,6 +22,8 @@ namespace MoI
         public int successesCount;
         public int failsCount;
 
+        public int charactersCount;
+
 
         private List<string> _dictList;
         
@@ -39,6 +41,7 @@ namespace MoI
         {
             successesCount = 0;
             failsCount = 0;
+            charactersCount = 0;
             _wgController.Activate(_dictList);
             _glController.Activate(_settingsController._data);
         }

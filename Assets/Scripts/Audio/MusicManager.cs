@@ -38,7 +38,7 @@ namespace MoI {
         }
 
         public void Play(AudioClip clip) {
-            if (current && current.clip == clip) return;
+            // if (current && current.clip == clip) return;
 
             if (previous) {
                 Destroy(previous);

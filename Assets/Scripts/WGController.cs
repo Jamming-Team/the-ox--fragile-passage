@@ -61,6 +61,7 @@ namespace MoI
             _view.ClearInputField();
             
             LevelController.Instance.successesCount += 1;
+            LevelController.Instance.charactersCount += obj.Length;
             GameEvents.OnSuccessInput?.Invoke(obj.Length);
         }
 

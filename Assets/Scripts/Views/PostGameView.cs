@@ -18,6 +18,9 @@ namespace MoI
         private TMP_Text _successesText;
         [SerializeField]
         private TMP_Text _failsText;
+        
+        [SerializeField]
+        private TMP_Text _charactersPerMinuteText;
 
         private void OnEnable()
         {
@@ -52,6 +55,7 @@ namespace MoI
             _outcomeText.text = "You Lost!";
             _successesText.text = LevelController.Instance.successesCount.ToString();
             _failsText.text = LevelController.Instance.failsCount.ToString();
+            _charactersPerMinuteText.text = (LevelController.Instance.charactersCount / (LevelController.Instance.settingsController._data.victoryTimer / 60)).ToString();
         }
 
         private void OnGameWon()
@@ -59,6 +63,7 @@ namespace MoI
             _outcomeText.text = "YOU DID IT!";
             _successesText.text = LevelController.Instance.successesCount.ToString();
             _failsText.text = LevelController.Instance.failsCount.ToString();
+            _charactersPerMinuteText.text = (LevelController.Instance.charactersCount / (LevelController.Instance.settingsController._data.victoryTimer / 60)).ToString();
         }
     }
 }
