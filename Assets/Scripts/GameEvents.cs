@@ -5,6 +5,8 @@ namespace MoI
     public static class GameEvents
     {
         public static Action<int> OnSuccessInput;
+        public static Action OnGameLost;
+        public static Action OnGameWon;
 
         public static Action OnPressStart;
         public static Action OnPressSettings;

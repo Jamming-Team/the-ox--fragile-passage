@@ -19,6 +19,7 @@ namespace MoI
         private WGController _wgController;
 
 
+
         private List<string> _dictList;
         
         private void Start()

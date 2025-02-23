@@ -16,8 +16,10 @@ namespace MoI
             _pauseButton.onClick.AddListener(PressPauseButton);
             _inputField.Select();
             _inputField.ActivateInputField();
+            
+
         }
-        
+
         private void OnDisable()
         {
             _pauseButton.onClick.RemoveListener(PressPauseButton);

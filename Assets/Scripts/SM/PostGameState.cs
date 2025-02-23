@@ -24,7 +24,8 @@ namespace MoI.SM
 
         private void OnPressRestart()
         {
-            RequestTransition<GameInitState>();
+            _core.StartGame();
+            RequestTransition<ActionState>();
         }
     }
 }

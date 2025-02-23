@@ -41,7 +41,20 @@ namespace MoI.GameLogicMVP
             
             GameEvents.OnSuccessInput += OnSuccessInput;
             
+            _model.OnVictory += OnVictory;
+            _model.OnDefeat += OnDefeat;
+            
             _isActive = true;
+        }
+
+        private void OnVictory()
+        {
+            GameEvents.OnGameWon?.Invoke();
+        }
+        
+        private void OnDefeat()
+        {
+            GameEvents.OnGameLost?.Invoke();
         }
 
         public void Deactivate()
