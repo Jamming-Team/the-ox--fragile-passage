@@ -24,6 +24,7 @@ namespace MoI
             public float gameMinTemp = -60f;
             public float absoluteMaxTemp = 20f;
             public float gameMaxTemp = 0f;
+            public float tempDecreasingRate = 1.5f;
             
             public float minParticlesDuration = 0.2f;
             public float maxParticlesDuration = 4f;

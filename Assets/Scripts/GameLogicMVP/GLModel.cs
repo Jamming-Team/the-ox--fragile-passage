@@ -38,7 +38,7 @@ namespace MoI.GameLogicMVP
         public void UpdateValues(float delta)
         {
             _glModelData.fireValue = Mathf.Clamp(_glModelData.fireValue - _fireFadeRate * delta, 0, 1f);
-            _glModelData.tempValue = Mathf.Clamp(_glModelData.tempValue - _tempFadeRate * delta, _minTemp, 20f);
+            _glModelData.tempValue = Mathf.Clamp(_glModelData.tempValue - _wgData.tempDecreasingRate * delta, _minTemp, 20f);
             _glModelData.victoryTimerValue -= delta;
 
             // Debug.Log(_currentHealthDepletionRate);
