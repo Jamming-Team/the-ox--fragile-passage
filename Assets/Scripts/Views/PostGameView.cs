@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,10 @@ namespace MoI
         
         [SerializeField]
         private TMP_Text _outcomeText;
+        [SerializeField]
+        private TMP_Text _successesText;
+        [SerializeField]
+        private TMP_Text _failsText;
 
         private void OnEnable()
         {
@@ -45,11 +50,15 @@ namespace MoI
         private void OnGameLost()
         {
             _outcomeText.text = "You Lost!";
+            _successesText.text = LevelController.Instance.successesCount.ToString();
+            _failsText.text = LevelController.Instance.failsCount.ToString();
         }
 
         private void OnGameWon()
         {
             _outcomeText.text = "YOU DID IT!";
+            _successesText.text = LevelController.Instance.successesCount.ToString();
+            _failsText.text = LevelController.Instance.failsCount.ToString();
         }
     }
 }

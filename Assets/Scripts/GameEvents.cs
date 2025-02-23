@@ -7,6 +7,9 @@ namespace MoI
         public static Action<int> OnSuccessInput;
         public static Action OnGameLost;
         public static Action OnGameWon;
+        
+        public static Action<int[]> OnCountsChanged;
+
 
         public static Action OnPressStart;
         public static Action OnPressSettings;

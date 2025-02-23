@@ -19,6 +19,9 @@ namespace MoI
         private WGController _wgController;
 
 
+        public int successesCount;
+        public int failsCount;
+
 
         private List<string> _dictList;
         
@@ -33,6 +36,8 @@ namespace MoI
 
         public void StartGame()
         {
+            successesCount = 0;
+            failsCount = 0;
             _wgController.Activate(_dictList);
             _glController.Activate(_settingsController._data);
         }

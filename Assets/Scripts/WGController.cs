@@ -60,6 +60,7 @@ namespace MoI
             _model.FillWordsList();
             _view.ClearInputField();
             
+            LevelController.Instance.successesCount += 1;
             GameEvents.OnSuccessInput?.Invoke(obj.Length);
         }
 

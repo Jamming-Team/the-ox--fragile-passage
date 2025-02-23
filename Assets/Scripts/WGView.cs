@@ -34,6 +34,8 @@ namespace MoI
 
         public void ClearInputField()
         {
+            if (_inputField.text.Length > 1)
+                LevelController.Instance.failsCount += 1;
             _inputField.text = "";
         }
 

@@ -3582,7 +3582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6334834395990296425, guid: fd2c7a41e4b76efd68007b5a06afd4d2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6334834395990296425, guid: fd2c7a41e4b76efd68007b5a06afd4d2, type: 3}
       propertyPath: m_AnchorMin.x
@@ -3590,7 +3590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6334834395990296425, guid: fd2c7a41e4b76efd68007b5a06afd4d2, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6334834395990296425, guid: fd2c7a41e4b76efd68007b5a06afd4d2, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3630,11 +3630,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6334834395990296425, guid: fd2c7a41e4b76efd68007b5a06afd4d2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6334834395990296425, guid: fd2c7a41e4b76efd68007b5a06afd4d2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -288.50665
       objectReference: {fileID: 0}
     - target: {fileID: 6334834395990296425, guid: fd2c7a41e4b76efd68007b5a06afd4d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3997,6 +3997,8 @@ MonoBehaviour:
   _restartButton: {fileID: 1947066314}
   _toMainMenuButton: {fileID: 924231227}
   _outcomeText: {fileID: 1917069547}
+  _successesText: {fileID: 1798452373}
+  _failsText: {fileID: 1855841487}
 --- !u!1 &1019609540
 GameObject:
   m_ObjectHideFlags: 0
@@ -5722,6 +5724,8 @@ MonoBehaviour:
   _continueButton: {fileID: 1267689667}
   _restartButton: {fileID: 887413256}
   _toMainMenuButton: {fileID: 1335659756}
+  _successesText: {fileID: 1536566075}
+  _failsText: {fileID: 1892030983}
 --- !u!1 &1393941167
 GameObject:
   m_ObjectHideFlags: 0
@@ -6482,7 +6486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1508441256
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9113,7 +9117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6334834395990296425, guid: fd2c7a41e4b76efd68007b5a06afd4d2, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6334834395990296425, guid: fd2c7a41e4b76efd68007b5a06afd4d2, type: 3}
       propertyPath: m_AnchorMin.x
@@ -9121,7 +9125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6334834395990296425, guid: fd2c7a41e4b76efd68007b5a06afd4d2, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6334834395990296425, guid: fd2c7a41e4b76efd68007b5a06afd4d2, type: 3}
       propertyPath: m_SizeDelta.x
@@ -9161,11 +9165,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6334834395990296425, guid: fd2c7a41e4b76efd68007b5a06afd4d2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6334834395990296425, guid: fd2c7a41e4b76efd68007b5a06afd4d2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -122.83555
       objectReference: {fileID: 0}
     - target: {fileID: 6334834395990296425, guid: fd2c7a41e4b76efd68007b5a06afd4d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9584,6 +9588,8 @@ MonoBehaviour:
   _stateMachine: {fileID: 834780007}
   _glController: {fileID: 1792056063}
   _wgController: {fileID: 1213750179}
+  successesCount: 0
+  failsCount: 0
 --- !u!4 &2113274983
 Transform:
   m_ObjectHideFlags: 0
