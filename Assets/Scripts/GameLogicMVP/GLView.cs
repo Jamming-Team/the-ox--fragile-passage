@@ -23,6 +23,8 @@ namespace MoI.GameLogicMVP
 
         [SerializeField]
         private ParticleSystem _firePS;
+        [SerializeField]
+        private Light _light;
 
         public void SetIntro()
         {
@@ -31,6 +33,7 @@ namespace MoI.GameLogicMVP
             var startColor = main.startColor;
             startColor.color = new Color(1, 1, 1, 1);
             main.startColor = startColor;
+            _light.intensity = 2.5f;
         }
 
         public void UpdateState(GLViewData data)
@@ -44,6 +47,8 @@ namespace MoI.GameLogicMVP
             var startColor = main.startColor;
             startColor.color = new Color(1, 1, 1, data.fireFill);
             main.startColor = startColor;
+            
+            _light.intensity = Mathf.Lerp(0f, 2.5f, data.fireFill);
             
             _victoryTimerText.text = (Mathf.Round(data.timerValue * 10f) / 10f).ToString();
 
