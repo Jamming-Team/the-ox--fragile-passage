@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: MoI
   m_EditorClassIdentifier: 
   gameData:
-    musicVolume: 1
-    SFXVolume: 1
+    musicVolume: 0.8
+    SFXVolume: 0.8
     maxCurrentWordsCount: 4
     victoryTimer: 60
     absoluteMinTemp: -80
-    gameMinTemp: -56
+    gameMinTemp: -50
     absoluteMaxTemp: 20
     gameMaxTemp: 0
     tempDecreasingRate: 1.5
     minParticlesDuration: 0.2
     maxParticlesDuration: 4
     fireFadeRate: 0.1
-    valuePerCharacter: 0.04
+    valuePerCharacter: 0.035
     maxHealthDepletionRate: 0.1

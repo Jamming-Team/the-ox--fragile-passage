@@ -13,6 +13,7 @@ namespace MoI
         private TMP_Text _currentWords;
         [SerializeField]
         private TMP_InputField _inputField;
+        public int inputLength => _inputField.text.Length;
 
         public void Activate()
         {
@@ -34,8 +35,6 @@ namespace MoI
 
         public void ClearInputField()
         {
-            if (_inputField.text.Length > 1)
-                LevelController.Instance.failsCount += 1;
             _inputField.text = "";
         }
 

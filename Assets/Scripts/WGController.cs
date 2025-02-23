@@ -66,6 +66,8 @@ namespace MoI
 
         private void OnInputFailed()
         {
+            if (_view.inputLength > 1)
+                LevelController.Instance.failsCount += 1;
             _view.ClearInputField();
         }
 
