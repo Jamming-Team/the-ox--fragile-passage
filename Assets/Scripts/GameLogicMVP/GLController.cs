@@ -12,9 +12,8 @@ namespace MoI.GameLogicMVP
         private GameObject _sparkPrefab;
         [SerializeField]
         private Transform _sparkSpawnPoint;
-        [SerializeField]
-        private WGDataSO _wgDataSO;
-        private WGDataSO.GameData _data => _wgDataSO.gameData;
+
+        private WGDataSO.GameData _data;
 
         [SerializeField]
         private GLView _view;
@@ -22,14 +21,17 @@ namespace MoI.GameLogicMVP
         private GLModel _model;
 
 
-        private void Start()
-        {
-            Init();
-        }
+        private bool _isActive = false;
+        
+        // private void Start()
+        // {
+        //     Init();
+        // }
 
 
-        public void Init()
+        public void Init(WGDataSO wgDataSO)
         {
+            _data = wgDataSO.gameData;
             _model = new GLModel(_data.gameMaxTemp, _data.victoryTimer, 
                 _data.gameDecreaseRate, _data.fireFadeRate, _data.gameMinTemp, _data);
             
@@ -49,6 +51,9 @@ namespace MoI.GameLogicMVP
 
         private void Update()
         {
+            if (!_isActive)
+                return;
+            
             // Debug.Log(_model._glModelData.victoryTimerValue);
             _model.UpdateValues(Time.deltaTime);
 

@@ -11,6 +11,9 @@ namespace MoI
         [Serializable]
         public class GameData
         {
+            public float musicVolume;
+            public float SFXVolume;
+            
             // WG itself
             public int maxCurrentWordsCount = 4;
             

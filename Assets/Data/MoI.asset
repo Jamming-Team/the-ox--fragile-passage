@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: MoI
   m_EditorClassIdentifier: 
   gameData:
+    musicVolume: 1
+    SFXVolume: 1
     maxCurrentWordsCount: 4
     victoryTimer: 60
     absoluteMinTemp: -80
-    gameMinTemp: -60
+    gameMinTemp: -56
     absoluteMaxTemp: 20
     gameMaxTemp: 0
     minParticlesDuration: 0.2

@@ -18,5 +18,12 @@ namespace MoI
         public static Action OnPressContinue;
         public static Action OnPressRestart;
         public static Action OnPressToMainMenu;
+
+
+        public static Action<float> OnChangeMusicVolume;
+        public static Action<float> OnChangeSFXVolume;
+        
+        public static Action<float> OnChangeMinTempValue;
+        public static Action<float> OnChangeVictoryTimer;
     }
 }
