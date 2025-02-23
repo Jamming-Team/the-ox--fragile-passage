@@ -27,6 +27,7 @@ namespace MoI
         
         private void Start()
         {
+            Application.targetFrameRate = 60;
             DictionaryLoader.LoadDictionary(out _dictList);
 
             _settingsController.Init();
